@@ -1,0 +1,202 @@
+
+.login-container {
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reg-container {
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.reg-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sub-reg-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 3px;
+}
+
+.input-login-group {
+    width: 100%;
+    margin: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.input-reg-group {
+    margin: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.login-container p,
+.reg-container p {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.login-container h1,
+.reg-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-login-group label,
+.input-reg-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Times New Roman', Times, serif;
+    outline: none;
+}
+
+.login-button {
+
+    display: flex;
+    justify-content: center;
+}
+
+.reg-button {
+    display: flex;
+    justify-content: center;
+}
+
+.button-login-group {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-reg-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-login-group button {
+    width: 95%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.button-reg-group button {
+    width: 90%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button-login-group button:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button-reg-group button:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.error-msg {
+    width: 98%;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+@media (min-width:800px) {
+    .reg-container {
+        width: 50%;
+    }
+    .login-container {
+        width: 35%;
+    }
+    .sub-reg-container {
+        flex-direction: row;
+    }
+    .input-reg-group {
+        width: 50%;
+    }
+}
+
+@media (max-width:799px) {
+    .reg-container {
+        width: 75%;
+    }
+    .login-container {
+        width: 75%;
+    }
+    .sub-reg-container {
+        flex-direction: column;
+    }
+    .input-reg-group {
+        width: 100%;
+    }
+}
+

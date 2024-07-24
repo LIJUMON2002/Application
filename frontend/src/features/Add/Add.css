@@ -1,0 +1,98 @@
+.main-container {
+    position: relative;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message {
+    background-color: rgb(9, 255, 0);
+    color: rgba(0, 30, 255);
+    padding: 1vh 8vh;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.heading {
+    margin: 0px;
+    color: rgb(241, 241, 241);
+    padding: 2vh;
+    font-size: 20px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.contact-field {
+    display: flex;
+    width: 60%;
+    margin: 10px;
+}
+
+.contact-field input {
+    width: 70%;
+    background-color: white;
+    height: 40px;
+    outline: none;
+}
+
+.contact-field label {
+    color: white;
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.add-button {
+    width: 100%;
+    padding: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-button button {
+    width: 25%;
+    padding: 1.5vh;
+    border-radius: 20px;
+    color: white;
+    background: -webkit-linear-gradient(16deg,#ff5546,#4b90ff);
+    border: 2px solid rgba(255, 255, 255, 0);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button button:hover {
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid pink;
+    color: pink;
+}
+
+@media (max-width: 799px) {
+    .heading {
+        font-size: 15px;
+        padding-top: 8vh;
+    }
+    .contact-field {
+        width: 80%;
+    }
+    .contact-field label {
+        width: 50%;
+    }
+    .contact-field input {
+        width: 50%;
+    }
+    .add-button button{
+        width: 60%;
+    }
+}
