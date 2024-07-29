@@ -10,30 +10,31 @@ const initialState = {
     error: null,
 };
 
-export const listContacts = createAsyncThunk('contact/list', async () => {
-    
+export const listContacts = createAsyncThunk('contact/list', async (_,{rejectWithValue}) => {
     try {
-        const response = await axios.get('http://192.168.204.74:8000/contact/list/');
+        const response = await axios.get('http://192.168.66.74:8000/contact/list/');
         return response.data;
     } catch (error) {
         alert(error.response.data.error);
+        return rejectWithValue(error.response.data.error);
     }
 });
 
 
-
-export const searchContacts = createAsyncThunk('contact/search', async (credentials) => {
+export const searchContacts = createAsyncThunk('contact/search', async (credentials, {rejectWithValue}) => {
     try {
-        const response = await axios.post('http://192.168.204.74:8000/contact/search/',credentials);
+        const response = await axios.post('http://192.168.66.74:8000/contact/search/',credentials);
         return response.data;
     } catch (error) {
         alert(error.response.data.error);
+        
+        return rejectWithValue(error.response.data.error);
     }
 });
 
 export const addContact = createAsyncThunk('contact/add', async (credentials, {rejectWithValue}) => {
     try {
-        await axios.post('http://192.168.204.74:8000/contact/add/', credentials);
+        await axios.post('http://192.168.66.74:8000/contact/add/', credentials);
         return { message: 'Contact Added successfully' };
     } catch(error) {
         alert(error.response.data.error);
@@ -43,7 +44,7 @@ export const addContact = createAsyncThunk('contact/add', async (credentials, {r
 
 export const editContact = createAsyncThunk('contact/edit', async (credentials, {rejectWithValue}) => {
     try {
-        await axios.post('http://192.168.204.74:8000/contact/edit/', credentials);
+        await axios.post('http://192.168.66.74:8000/contact/edit/', credentials);
         return { message: 'Contact Edited successfully' };
     } catch(error) {
         alert(error.response.data.error);
@@ -51,12 +52,13 @@ export const editContact = createAsyncThunk('contact/edit', async (credentials, 
     }
 });
 
-export const deleteContact = createAsyncThunk('contact/delete', async(credentials) => {
+export const deleteContact = createAsyncThunk('contact/delete', async(credentials, {rejectWithValue}) => {
     try {
-        await axios.post('http://192.168.204.74:8000/contact/delete/', credentials);
+        await axios.post('http://192.168.66.74:8000/contact/delete/', credentials);
         return { message: 'Contact Deleted successfully' };
     } catch(error) {
         alert(error.response.data.error);
+        return rejectWithValue(error.response.data.error);
     }
 })
 

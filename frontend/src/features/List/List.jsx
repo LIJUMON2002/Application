@@ -11,6 +11,7 @@ const List = () => {
   const [filter, setFilter] = useState('firstname');
   const [sortTerm, setSortTerm] = useState('firstname');
   const { contact = [], message } = useSelector((state) => state.contact);
+  const { token } = useSelector((state) => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -53,16 +54,16 @@ const List = () => {
     setFirst((value - 1) * postsPerPage);
   }
 
-  const fetchContacts = () => {
-    dispatch(listContacts());
-    navigate('/contact');
-  }
-
   useEffect(() => {
+    const fetchContacts = () => {
+      dispatch(listContacts());
+      navigate('/contact');
+    }
+
     if (message === 'idle') {
       fetchContacts();
     }
-  }, [message]);
+  }, [message, dispatch, navigate]);
 
   const handleDelete = (first_name, last_name, address, company, phone_number) => {
     dispatch(deleteContact({ first_name, last_name, address, company, phone_number }));
@@ -72,7 +73,7 @@ const List = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(searchContacts({ filter, searchTerm }));
+    dispatch(searchContacts({ filter, searchTerm, token }));
     navigate('/contact');
   };
 

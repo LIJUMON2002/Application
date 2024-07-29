@@ -9,31 +9,39 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const profile = useSelector((state) => state.auth.user.profile);
+  const {user} = useSelector((state) => state.auth.user);
+  console.log(user);
 
   const handleProfile = () => {
     navigate('/profile');
   }
+
   const handleAdd = () => {
     navigate('/add');
   }
+
   const handleContact = () => {
     dispatch(listContacts());
     navigate('/contact');
   }
+
   return (
       <div className="main-nav">
         <div className='main-nav-sub'>
-          <img src={assets.app} alt=''/>
+          <img src={assets.app} alt='App Logo'/>
           <p>ContactBase</p>
         </div>
         <div className="home-button">
           <button type='button' onClick={handleContact}>Home</button>
           <button type='button' onClick={handleAdd}>Add</button>
-          <img src="" alt='' onClick={handleProfile}/>
+          {user ? (
+            <img src={user.profile} alt='Profile' onClick={handleProfile}/>
+          ) : (
+            <img src='' alt='Default Profile' />
+          )}
         </div>
       </div>
-    )
+  )
 }
 
 export default Navbar
